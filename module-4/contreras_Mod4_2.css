@@ -1,0 +1,61 @@
+/* 
+    Name: Fernando Contreras
+    Date: June 3, 2026
+    Assignment: 4.2 Build a Web Page Exercise - Part 4
+    Description: Stylesheet for the book cover image gallery page.
+    Course: CSD 340 Web Development with HTML and CSS
+    Instructor: Professor Sue
+*/
+
+h1 {
+    text-align: center;
+    color: rgba(180, 80, 20, 1);
+}
+
+h3 {
+    text-align: center;
+    color: rgba(180, 80, 20, 1);
+}
+
+#image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 10%;
+    border: 1px solid rgba(180, 80, 20, 1);
+}
+
+.book-card {
+    border: 1px solid rgba(180, 80, 20, 1);
+    padding: 10px;
+}
+
+figure {
+    text-align: center;
+}
+
+figure img {
+    width: 200px;
+    height: auto;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: .75em;
+    color: rgba(100, 100, 100, 1);
+}
+
+.bottom-div {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 20px;
+}
+
+.bottom-div a {
+    float: right;
+    text-decoration: none;
+    color: rgba(180, 80, 20, 1);
+}
+
+.bottom-div a:hover {
+    text-decoration: underline;
+}
