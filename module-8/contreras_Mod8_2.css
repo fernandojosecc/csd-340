@@ -1,0 +1,124 @@
+/*
+    Name: Fernando Contreras
+    Date: July 11, 2026
+    Assignment: 8.2 Build a Web Page Exercise - Part 6
+   
+*/
+
+/* Header styles */
+header {
+    background-color: #B84A1A;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* H1 styles */
+h1 {
+    font-weight: 400;
+}
+
+/* Navbar styles */
+#navbar {
+    overflow: hidden;
+    background-color: #B84A1A;
+    border-bottom: 15px solid #8B8B3A;
+}
+
+/* Navbar link styles */
+#navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Navbar link hover styles */
+#navbar a:hover {
+    background-color: #8B8B3A;
+    color: white;
+}
+
+/* Container styles - updated with shorthand margin */
+#container {
+    margin: 2% 5% 100px 5%;
+    padding: 10px;
+}
+
+/* Card styles */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 50%;
+}
+
+/* Card title styles */
+.card-title {
+    text-align: center;
+    font-size: 2em;
+    color: #B84A1A;
+    font-weight: 400;
+}
+
+/* Card content styles */
+.card-content {
+    padding: 2px 16px;
+}
+
+/* Card hover styles */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Movies table styles */
+#movies {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Movies table header styles */
+#movies th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #B84A1A;
+    color: white;
+}
+
+/* Movies table cell styles */
+#movies td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Footer styles - changed to fixed */
+footer {
+    background-color: #B84A1A;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Footer paragraph styles */
+footer p {
+    color: white;
+    font-weight: 400;
+    float: right;
+    padding-right: 10px;
+    font-style: italic;
+}
+
+/* Footer link styles */
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Footer link hover styles */
+footer a:hover {
+    text-decoration: underline;
+}
