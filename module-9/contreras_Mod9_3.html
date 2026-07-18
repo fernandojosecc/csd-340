@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+    Name: Fernando Contreras
+    Date: July 18, 2026
+    Assignment: 9.3 JavaScript Exercise - Part 1
+    Description: A JavaScript exercise using variables and buttons
+    to fill in blank span tags within a short personal story
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Assignment 9.3 - JavaScript Exercise Part 1">
+    <meta name="author" content="Fernando Contreras">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link href="../module-2/contreras_Mod2_2.css" type="text/css" rel="stylesheet">
+
+    <!-- JavaScript variables for the span tags -->
+    <script>
+        var firstVariableValue = "Los Angeles";
+        var secondVariableValue = "technology";
+        var thirdVariableValue = "journalism";
+        var fourthVariableValue = "California";
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Assignment 9.3: JavaScript - Part 1</h1>
+        <h2>Chapter 2: My Story</h2>
+
+        <p class="intro">I grew up in <span id="first">__________</span>, surrounded by a culture that valued hard work and creativity. From a young age I was drawn to computers and the way they could solve real problems for real people. That curiosity eventually led me down a path I never expected but am incredibly grateful for.</p>
+
+        <p>My passion for <span id="second">__________</span> grew stronger with every project I worked on. I started teaching myself how to build things — websites, scripts, small tools — and realized that coding was less about memorizing syntax and more about learning how to think. That shift in perspective changed everything for me and gave me the confidence to pursue a career in software development.</p>
+
+        <p>Along the way I met some amazing people who inspired me, including my friend Samira, whose dedication to <span id="third">__________</span> taught me what it looks like to chase something you truly believe in. I am currently based in <span id="fourth">__________</span>, building toward a future in software development while staying curious, staying creative, and never stopping learning.</p>
+
+        <p>
+            <button type="button"
+                onclick="document.getElementById('first').innerHTML = firstVariableValue">Los Angeles</button>
+            <br />
+            <button type="button"
+                onclick="document.getElementById('second').innerHTML = secondVariableValue">technology</button>
+            <br />
+            <button type="button"
+                onclick="document.getElementById('third').innerHTML = thirdVariableValue">journalism</button>
+            <br />
+            <button type="button"
+                onclick="document.getElementById('fourth').innerHTML = fourthVariableValue">California</button>
+        </p>
+
+        <hr />
+
+        <address>
+            <p><a href="https://www.bellevue.edu">Bellevue University</a></p>
+            <p>1000 Galvin Road South</p>
+            <p>Bellevue, NE 68005</p>
+        </address>
+    </div>
+</body>
+</html>
