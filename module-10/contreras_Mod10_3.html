@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+    Name: Fernando Contreras
+    Date: July 24, 2026
+    Assignment: 10.3 JavaScript Exercise - Part 2
+    Description: An interactive image gallery using JavaScript's
+    onclick MouseEvent to swap a main display image when a
+    thumbnail is clicked.
+    Course: CSD 340 Web Development with HTML and CSS
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Assignment 10.3 - JavaScript Exercise Part 2">
+    <meta name="author" content="Fernando Contreras">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link href="../module-2/contreras_Mod2_2.css" type="text/css" rel="stylesheet">
+
+    <!-- JavaScript function to swap the main image when a thumbnail is clicked -->
+    <script>
+        function displayImage(imageFile) {
+            var mainImage = document.getElementById("mainImage");
+            mainImage.src = imageFile;
+        }
+    </script>
+
+    <style>
+        .thumbnail {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .thumbnail:hover {
+            border-color: #4F3674;
+        }
+
+        #mainImage {
+            width: 500px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Assignment 10.3: JavaScript - Part 2</h1>
+        <h2>My Favorite Cars at the Pettersen Automotive Museum</h2>
+
+        <p>Click on any thumbnail below to see a larger view of the car.</p>
+
+        <img id="mainImage" src="images/car1.jpeg" alt="Car">
+
+        <div>
+            <img class="thumbnail" src="images/car1.jpeg" alt="Car 1"
+                onclick="displayImage('images/car1.jpeg')">
+            <img class="thumbnail" src="images/car2.jpeg" alt="Car 2"
+                onclick="displayImage('images/car2.jpeg')">
+            <img class="thumbnail" src="images/car3.jpeg" alt="Car 3"
+                onclick="displayImage('images/car3.jpeg')">
+            <img class="thumbnail" src="images/car4.jpeg" alt="Car 4"
+                onclick="displayImage('images/car4.jpeg')">
+        </div>
+
+        <hr />
+
+    </div>
+</body>
+</html>
