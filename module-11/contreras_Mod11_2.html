@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+    Name: Fernando Contreras
+    Date: Aug 1, 2026
+    Assignment: 11.2 JavaScript Exercise - Part 3
+    Description: A To Do List application using JavaScript arrays,
+    with functions for adding, deleting, sorting, and displaying items.
+    Course: CSD 340 Web Development with HTML and CSS
+    Instructor: Professor Sue
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Assignment 11.2 - JavaScript Exercise Part 3">
+    <meta name="author" content="Fernando Contreras">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #f0f2f7;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #2C2C2A;
+            text-align: center;
+        }
+
+        .todo-box {
+            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .instructions {
+            font-size: 0.95em;
+            color: #5F5E5A;
+            margin-bottom: 20px;
+        }
+
+        #taskInput {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        #deleteSelect {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            font-size: 0.95em;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #addBtn {
+            background-color: #4CAF50;
+        }
+
+        #deleteLastBtn {
+            background-color: #E24B4A;
+        }
+
+        #deleteSelectedBtn {
+            background-color: #2B77F8;
+        }
+
+        #sortBtn {
+            background-color: #2371A0;
+        }
+
+        #taskDisplay {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        #taskDisplay ol {
+            padding-left: 20px;
+        }
+
+        #taskDisplay li {
+            padding: 4px 0;
+        }
+    </style>
+
+    <!-- JavaScript section -->
+    <script>
+        var tasks = [];
+
+        // Adds a task to the array
+        function addTask() {
+            var input = document.getElementById("taskInput");
+            var task = input.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task before adding.");
+                return;
+            }
+
+            tasks.push(task);
+            alert("Added: " + task);
+            input.value = "";
+            displayTasks();
+        }
+
+        // Deletes the last task in the array
+        function deleteLastTask() {
+            if (tasks.length === 0) {
+                alert("There are no tasks to delete.");
+                return;
+            }
+
+            var removed = tasks.pop();
+            alert("Deleted: " + removed);
+            displayTasks();
+        }
+
+        // Deletes a task selected from the dropdown
+        function deleteSelectedTask() {
+            var select = document.getElementById("deleteSelect");
+            var index = select.value;
+
+            if (index === "") {
+                alert("Please select a task to delete.");
+                return;
+            }
+
+            var removed = tasks.splice(index, 1);
+            alert("Deleted: " + removed);
+            displayTasks();
+        }
+
+        // Sorts the array alphabetically
+        function sortTasks() {
+            if (tasks.length === 0) {
+                alert("There are no tasks to sort.");
+                return;
+            }
+
+            tasks.sort();
+            alert("Tasks have been sorted!");
+            displayTasks();
+        }
+
+        // Displays the current contents of the array
+        function displayTasks() {
+            var display = document.getElementById("taskDisplay");
+            var select = document.getElementById("deleteSelect");
+
+            select.innerHTML = "<option value=''>-- Select item to delete --</option>";
+
+            if (tasks.length === 0) {
+                display.innerHTML = "<p>Your to do list is empty.</p>";
+                return;
+            }
+
+            var list = "<h3>To Do List:</h3><ol>";
+            for (var i = 0; i < tasks.length; i++) {
+                list += "<li>" + tasks[i] + "</li>";
+                select.innerHTML += "<option value='" + i + "'>" + tasks[i] + "</option>";
+            }
+            list += "</ol>";
+
+            display.innerHTML = list;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+    <div class="todo-box">
+        <p class="instructions">
+            Enter a task below and click Add to add it to your list. Click Delete Last Entry
+            to remove the most recently added item, or select an item from the dropdown and
+            click Delete Selected Item. Click Sort to sort your list alphabetically.
+        </p>
+
+        <input type="text" id="taskInput" placeholder="Enter a task...">
+
+        <select id="deleteSelect">
+            <option value="">-- Select item to delete --</option>
+        </select>
+
+        <div class="btn-row">
+            <button id="addBtn" onclick="addTask()">Add</button>
+            <button id="deleteLastBtn" onclick="deleteLastTask()">Delete Last Entry</button>
+            <button id="deleteSelectedBtn" onclick="deleteSelectedTask()">Delete Selected Item</button>
+            <button id="sortBtn" onclick="sortTasks()">Sort</button>
+        </div>
+
+        <div id="taskDisplay">
+            <p>Your to do list is empty.</p>
+        </div>
+    </div>
+</body>
+</html>
